@@ -4,11 +4,11 @@
   "buildCommand": "cd client && npx vite build",
   "outputDirectory": "client/dist",
   "functions": {
-    "api/index.js": {
+    "server/api/index.js": {
       "includeFiles": "server/**"
     }
   },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api" }
+    { "source": "/api/(.*)", "destination": "/server/api" }
   ]
 }
