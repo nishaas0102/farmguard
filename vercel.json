@@ -3,6 +3,11 @@
   "installCommand": "cd server && npm install && cd ../client && npm install --include=dev",
   "buildCommand": "cd client && npx vite build",
   "outputDirectory": "client/dist",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "server/**"
+    }
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api" }
   ]
