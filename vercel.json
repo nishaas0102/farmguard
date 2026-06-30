@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "installCommand": "cd server && npm install && cd ../client && npm install --include=dev",
+  "installCommand": "npm install && cd server && npm install && cd ../client && npm install --include=dev",
   "buildCommand": "cd client && npx vite build",
   "outputDirectory": "client/dist",
   "functions": {
-    "server/api/index.js": {
+    "api/index.js": {
       "includeFiles": "server/**"
     }
   },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/server/api" }
+    { "source": "/api/(.*)", "destination": "/api" }
   ]
 }

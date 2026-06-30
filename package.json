@@ -10,6 +10,22 @@
     "install-all": "npm run install-server && npm run install-client",
     "seed": "cd server && node scripts/sync-db.js && node seeders/drugs-master.js && node seeders/demo-data.js"
   },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^4.22.2",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.11.0",
+    "node-cron": "^4.5.0",
+    "pdfkit": "^0.19.1",
+    "pg": "^8.22.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.8",
+    "twilio": "^6.0.2"
+  },
   "engines": {
     "node": ">=18.0.0"
   }
