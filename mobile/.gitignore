@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Expo
+.expo
+.expo-shared
+dist
+build
+
+# Native
+*.jsbundle
+*.hprof
+*.ipa
+*.apk
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Compiled
+*.class
+*.o
+*.pyc
+
+# Mobile specific
+android
+ios
+.gradle
+local.properties
+.xcode.env
