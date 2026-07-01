@@ -76,20 +76,15 @@ async function seed() {
     await sequelize.authenticate();
     console.log('Connected.\n');
 
-    // Disable FK checks for truncation
-    await sequelize.query('SET FOREIGN_KEY_CHECKS = 0');
-
-    // Clear existing data
+    // Clear existing data (truncated in dependency order)
     console.log('Clearing existing data...');
-    await Alert.destroy({ where: {}, truncate: true });
-    await RiskAssessment.destroy({ where: {}, truncate: true });
-    await AmuLog.destroy({ where: {}, truncate: true });
-    await Animal.destroy({ where: {}, truncate: true });
-    await Farm.destroy({ where: {}, truncate: true });
-    await Drug.destroy({ where: {}, truncate: true });
-    await User.destroy({ where: {}, truncate: true });
-
-    await sequelize.query('SET FOREIGN_KEY_CHECKS = 1');
+    await Alert.destroy({ where: {}, truncate: true, cascade: true });
+    await RiskAssessment.destroy({ where: {}, truncate: true, cascade: true });
+    await AmuLog.destroy({ where: {}, truncate: true, cascade: true });
+    await Animal.destroy({ where: {}, truncate: true, cascade: true });
+    await Farm.destroy({ where: {}, truncate: true, cascade: true });
+    await Drug.destroy({ where: {}, truncate: true, cascade: true });
+    await User.destroy({ where: {}, truncate: true, cascade: true });
     console.log('Data cleared.\n');
 
     // ── 1. USERS ──
